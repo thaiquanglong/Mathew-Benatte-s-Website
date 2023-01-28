@@ -5,7 +5,8 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.support.MultipartFilter;
+import org.springframework.web.multipart.MultipartFile;
+
 @Service
 public class UserProfileService {
     private final UserProfileDataAccessService userProfileDataAccessService;
@@ -18,6 +19,11 @@ public class UserProfileService {
         return userProfileDataAccessService.getUserProfiles();
     }
 
-    public void uploadUserProfileImage(UUID userProfileId, MultipartFilter file) {
+    public void uploadUserProfileImage(UUID userProfileId, MultipartFile file) {
+        // check wether image is empty
+        // check if file is an image
+        // check the use exist
+        // grab meetadata
+        // store the image in s3 and update database with s3 image link
     }
 }
